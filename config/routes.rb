@@ -1,4 +1,17 @@
 Roshambo::Application.routes.draw do
+
+  get "throw/rock"
+
+  get "throw/paper"
+
+  get "throw/scissors"
+
+  match "/stats", :to => 'throw#results'
+  match "throw", :to => 'throw#score'
+  match "throw/", :to => 'throw#score'
+  root :to => 'throw#score'
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
